@@ -1,0 +1,11 @@
+<!-- src/app/user/user.component.html -->
+<div *ngIf="userData$ | async as user; else noUser">
+    <h1>Welcome, {{ user.name }}</h1>
+    <button (click)="clearUser()">Logout</button>
+  </div>
+  <ng-template #noUser>
+    <h1>No user logged in</h1>
+    <button (click)="setUser()">Login</button>
+  </ng-template>
+  
+  
